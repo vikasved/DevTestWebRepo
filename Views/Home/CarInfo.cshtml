@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "CarInfo Page";
+}
+
+<div class="text-center">
+    <h1>Car Information</h1>
+
+    <label for="selBrand">Brand: </label>
+    <select id="selBrand">
+        <option value="">Select Brand</option>
+        <option value="tata">Tata Motors</option>
+        <option value="maruti">Maruti Suzuki</option>
+        <option value="mahindra">Mahindra</option>
+        <option value="honda">Honda</option>
+        <option value="volkswagen">Volkswagen</option>
+    </select><br />
+
+    <label for="selModel">Model: </label>
+    <select id="selModel">
+        <option value="">Select Model</option>
+        <option value="nexon">Nexon</option>
+        <option value="punch">Punch</option>
+        <option value="harrier">Harrier</option>
+        <option value="dzire">Swift Dzire</option>
+        <option value="thar">Thar</option>
+        <option value="suv">SUV</option>
+        <option value="city">Honda City</option>
+        <option value="polo">Volkswagen Polo</option>
+    </select><br />
+
+    <label for="txtCarName">Car Name: </label>
+    <input type="text" id="txtCarName" /><br />
+
+    <label for="txtPrice">Price: </label>
+    <input type="text" id="txtPrice" /><br />
+
+    <label>New: </label>
+    <input type="radio" name="new" value="yes" /> Yes
+    <input type="radio" name="new" value="no" /> No
+    <br />
+
+    <button type="button" id="btnSaveCarInfo">Save Details</button>
+</div>
+<script src="~/js/login.js"></script>

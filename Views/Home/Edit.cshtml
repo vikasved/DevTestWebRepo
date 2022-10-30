@@ -1,0 +1,28 @@
+﻿@model DevTestWebApp.Models.CarDetail
+
+<form method="post">
+    <div class="text-center">
+        <h1>Edit Car Information</h1>
+
+        <label>Brand: </label>
+        <input type="text" value="@Model.Brand" />
+        <br />
+
+        <label for="selModel">Model: </label>
+        <input type="text" value="@Model.Model" />
+        <br />
+
+        <label for="txtCarName">Car Name: </label>
+        <input type="text" value="@Model.Carname" />
+        <br />
+
+        <label for="txtPrice">Price: </label>
+        <input type="text" value="@Model.Price" /><br />
+
+        <label>New: </label>
+        <input type="radio" name="new" value="@Model.New" />
+        <br />
+
+        <button type="button" id="btnEditCarInfo">Update Details</button>
+    </div>
+</form>

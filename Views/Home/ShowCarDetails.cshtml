@@ -1,0 +1,77 @@
+﻿@model List<DevTestWebApp.Models.CarDetail>
+
+@{
+    ViewData["Title"] = "Show Car Detail Page";
+}
+
+<table border="1" width="400">
+    <thead>
+        <tr class="btn-primary">
+            <th> Car Name</th>
+            <th> Brand</th>
+            <th> Model</th>
+            <th> Price</th>
+            <th> New</th>
+            <th> </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Carname</td>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Price</td>
+                <td>@car.New</td>
+                <td><button id="@car.Id" onclick="Edit(this.id)">Update</button></td>
+                <td><button id="@car.Id" onclick="Delete(this.id)">Delete</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function Edit(id) {
+        $.ajax({
+            url: "/Home/Edit",
+            type: "POST",
+            data: {
+                Id: id
+            },
+            success: function (response) {
+                if (response) {
+                    alert("Data Updated successfully");
+                }
+                else {
+                    alert("There is some error in updating data");
+                }
+            },
+            error: function (response) {
+                alert("There is some error in updating data");
+            }
+        });
+    }
+    function Delete(id) {
+        $.ajax({
+            url: "/Home/Delete",
+            type: "POST",
+            data: {
+                Id: id
+            },
+            success: function (response) {
+                console.log(response);
+                if (response == true) {
+                    alert("Data deleted successfully");
+                }
+                else {
+                    alert("There is some error in deleting data");
+                }
+            },
+            error: function (response) {
+                alert("There is some error in deleting data");
+            }
+        });
+    }
+</script>
